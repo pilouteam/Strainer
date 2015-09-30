@@ -1,5 +1,8 @@
 using Cirrious.CrossCore.IoC;
 using Strainer.Presentation.ViewModels;
+using Cirrious.CrossCore;
+using Cirrious.MvvmCross.ViewModels;
+using Otolane.Presentation;
 
 namespace Strainer
 {
@@ -12,7 +15,7 @@ namespace Strainer
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
 				
-            RegisterAppStart<HomeViewModel>();
+            Mvx.LazyConstructAndRegisterSingleton<IMvxAppStart, StartApplicationObject>();
         }
     }
 }

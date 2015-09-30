@@ -10,18 +10,17 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Strainer.Presentation.ViewModels;
+using Amp.Views;
 
 namespace Strainer.Droid.Activities
 {
-    [Activity(Label = "@string/app_name", Theme="@style/Theme.AppCompat.Light", MainLauncher = true, Icon = "@drawable/icon", ScreenOrientation=Android.Content.PM.ScreenOrientation.Landscape)]
-    public class HomeActivity : Activity
+    [Activity(Label = "Home")]
+    public class HomeActivity : BaseActivity<HomeViewModel>
     {
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-
-
-            // Create your application here
         }
     }
 }
