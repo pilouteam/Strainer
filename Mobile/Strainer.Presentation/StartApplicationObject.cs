@@ -10,7 +10,7 @@ namespace Otolane.Presentation
 {
     public class StartApplicationObject : MvxNavigatingObject, IMvxAppStart
     {
-        public async void Start(object hint = null)
+        public void Start(object hint = null)
         {
             ShowViewModel<HomeViewModel>();
         }

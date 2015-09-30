@@ -2,6 +2,7 @@ using Cirrious.CrossCore.Platform;
 using Cirrious.MvvmCross.ViewModels;
 using Cirrious.MvvmCross.Touch.Platform;
 using UIKit;
+using Amp;
 
 namespace Strainer.iOS
 {
@@ -14,6 +15,7 @@ namespace Strainer.iOS
 
 		protected override IMvxApplication CreateApp()
 		{
+            AmpModule.Init();
 			return new App();
 		}
 		
