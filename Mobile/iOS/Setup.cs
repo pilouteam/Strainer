@@ -3,6 +3,7 @@ using Cirrious.MvvmCross.ViewModels;
 using Cirrious.MvvmCross.Touch.Platform;
 using UIKit;
 using Amp;
+using Cirrious.CrossCore.IoC;
 
 namespace Strainer.iOS
 {

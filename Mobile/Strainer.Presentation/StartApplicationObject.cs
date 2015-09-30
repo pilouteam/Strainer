@@ -12,7 +12,7 @@ namespace Otolane.Presentation
     {
         public void Start(object hint = null)
         {
-            ShowViewModel<HomeViewModel>();
+            ShowViewModel<TabViewModel>();
         }
     }
 }

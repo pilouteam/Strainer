@@ -9,12 +9,18 @@ using System.CodeDom.Compiler;
 
 namespace Strainer.iOS.Views
 {
-	[Register ("HomeView")]
-	partial class HomeView
+	[Register ("TabView")]
+	partial class TabView
 	{
+		[Outlet]
+		UIKit.UITabBar tabBar { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
+			if (tabBar != null) {
+				tabBar.Dispose ();
+				tabBar = null;
+			}
 		}
 	}
 }

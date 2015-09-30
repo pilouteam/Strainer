@@ -3,12 +3,20 @@ using Strainer.Presentation.ViewModels;
 using Cirrious.CrossCore;
 using Cirrious.MvvmCross.ViewModels;
 using Otolane.Presentation;
+using Amp.MvvmCross;
 
 namespace Strainer
 {
-    public class App : Cirrious.MvvmCross.ViewModels.MvxApplication
+    public class App : AmpApplication
     {
-        public override void Initialize()
+        public override string ApplicationName
+        {
+            get
+            {
+                return "Strainer";
+            }
+        }
+        public App()
         {
             CreatableTypes()
                 .EndingWith("Service")
@@ -16,6 +24,8 @@ namespace Strainer
                 .RegisterAsLazySingleton();
 				
             Mvx.LazyConstructAndRegisterSingleton<IMvxAppStart, StartApplicationObject>();
+            Mvx.RegisterSingleton<AmpApplication>(this);
+
         }
     }
 }

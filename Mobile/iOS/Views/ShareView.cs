@@ -1,21 +1,22 @@
-﻿using Cirrious.MvvmCross.Binding.BindingContext;
-using Cirrious.MvvmCross.Touch.Views;
-using CoreGraphics;
+﻿
+using System;
+
 using Foundation;
-using ObjCRuntime;
 using UIKit;
-using Strainer.Presentation.ViewModels;
 using Amp.Views;
+using Strainer.Presentation.ViewModels;
+using ObjCRuntime;
+using CoreGraphics;
+using Cirrious.MvvmCross.Binding.BindingContext;
 
 namespace Strainer.iOS.Views
 {
-    public partial class HomeView : BaseViewController<HomeViewModel>
+    public partial class ShareView : BaseViewController<ShareViewModel>
     {
-        public HomeView()
-            : base("HomeView", null)
+        public ShareView()
+            : base("ShareView", null)
         {
         }
-
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
@@ -24,13 +25,13 @@ namespace Strainer.iOS.Views
             {
                 EdgesForExtendedLayout = UIRectEdge.None;
             }
-            View.BackgroundColor = UIColor.Blue;
+            View.BackgroundColor = UIColor.Red;
             var label = new UILabel(new CGRect(10, 10, 300, 40));
             Add(label);
             var textField = new UITextField(new CGRect(10, 50, 300, 40));
             Add(textField);
 
-            var set = this.CreateBindingSet<HomeView, HomeViewModel>();
+            var set = this.CreateBindingSet<ShareView, ShareViewModel>();
             set.Bind(label).To(vm => vm.Hello);
             set.Bind(textField).To(vm => vm.Hello);
             set.Apply();

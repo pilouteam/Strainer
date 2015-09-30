@@ -170,6 +170,9 @@
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
     <InterfaceDefinition Include="Main.storyboard" />
     <InterfaceDefinition Include="Views\HomeView.xib" />
+    <InterfaceDefinition Include="Views\TabView.xib" />
+    <InterfaceDefinition Include="Views\ShareView.xib" />
+    <InterfaceDefinition Include="Views\SettingsView.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -179,10 +182,6 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="ViewController.cs" />
-    <Compile Include="ViewController.designer.cs">
-      <DependentUpon>ViewController.cs</DependentUpon>
-    </Compile>
     <Compile Include="Setup.cs" />
     <Compile Include="DebugTrace.cs" />
     <Compile Include="LinkerPleaseInclude.cs" />
@@ -193,6 +192,19 @@
     <Compile Include="Bootstrap\DownloadCachePluginBootstrap.cs" />
     <Compile Include="Bootstrap\FilePluginBootstrap.cs" />
     <Compile Include="Bootstrap\MessengerPluginBootstrap.cs" />
+    <Compile Include="Views\TabView.cs" />
+    <Compile Include="Views\TabView.designer.cs">
+      <DependentUpon>TabView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\ViewControllerDefinition.cs" />
+    <Compile Include="Views\ShareView.cs" />
+    <Compile Include="Views\ShareView.designer.cs">
+      <DependentUpon>ShareView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SettingsView.cs" />
+    <Compile Include="Views\SettingsView.designer.cs">
+      <DependentUpon>SettingsView.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -200,5 +212,8 @@
       <Project>{E2AB1C02-8B62-4A66-B608-471A773978BB}</Project>
       <Name>Strainer.Presentation</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Framework\" />
   </ItemGroup>
 </Project>

@@ -4,8 +4,9 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeView">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TabView">
             <connections>
+                <outlet property="tabBar" destination="wrb-Xg-ZZ4" id="aXj-JN-aOo"/>
                 <outlet property="view" destination="iN0-l3-epB" id="kCW-yf-GMq"/>
             </connections>
         </placeholder>
@@ -13,7 +14,23 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wrb-Xg-ZZ4">
+                    <rect key="frame" x="0.0" y="519" width="320" height="49"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <items>
+                        <tabBarItem title="Home" id="4fi-Pt-4aO"/>
+                        <tabBarItem tag="1" title="Share" id="4cX-lV-Etm"/>
+                        <tabBarItem tag="2" title="Settings" id="CT8-N6-P5a"/>
+                    </items>
+                </tabBar>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="wrb-Xg-ZZ4" secondAttribute="bottom" id="0Xs-00-9jF"/>
+                <constraint firstItem="wrb-Xg-ZZ4" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="G0y-eq-llz"/>
+                <constraint firstAttribute="trailing" secondItem="wrb-Xg-ZZ4" secondAttribute="trailing" id="NX9-OV-1w2"/>
+            </constraints>
         </view>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
