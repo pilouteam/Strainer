@@ -18,6 +18,8 @@ namespace Strainer.iOS.Views
     public partial class TabView : BaseViewController<TabViewModel>
     {
         readonly ViewControllerDefinitionCollection _viewControllerDefinitions;
+        private UIBarButtonItem _addBarButtonItem;
+
         public TabView()
             : base("TabView", null)
         {
@@ -27,7 +29,7 @@ namespace Strainer.iOS.Views
                 {
                     Type = typeof(HomeView),
                     Index = 0,
-                    Title = "Home",
+                    Title = "Strainer",
                     DataContext = () => ViewModel.Home,
                 },
                 new ViewControllerDefinition
@@ -55,6 +57,9 @@ namespace Strainer.iOS.Views
             Title = _viewControllerDefinitions [0].Title;
             SetViewController (_viewControllerDefinitions [0].GetViewController ());
             tabBar.SelectedItem = tabBar.Items[0];
+
+            tabBar.BarTintColor = Colors.NavigationBar;
+            tabBar.TintColor = UIColor.White;
 
             tabBar.ItemSelected += (sender, e) => 
                 {
@@ -129,7 +134,6 @@ namespace Strainer.iOS.Views
                 SetViewController (definition.GetViewController ());
             }
         }
-
     }
 }
 

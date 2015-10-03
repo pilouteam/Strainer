@@ -17,6 +17,13 @@ namespace Strainer.iOS
         {
             _window = new UIWindow(UIScreen.MainScreen.Bounds);
 
+            UIApplication.SharedApplication.SetStatusBarStyle (UIStatusBarStyle.LightContent, false);
+            UINavigationBar.Appearance.SetTitleTextAttributes(new UITextAttributes
+                {
+                    TextColor = UIColor.White
+
+                });
+            
             var setup = new Setup(this, _window);
             setup.Initialize();
 

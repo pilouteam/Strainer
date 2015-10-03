@@ -6,6 +6,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeView">
             <connections>
+                <outlet property="searchBar" destination="JuU-U0-g3u" id="mAY-5T-ash"/>
+                <outlet property="tblCocktail" destination="pe7-Fw-IAC" id="vw2-qd-8gB"/>
                 <outlet property="view" destination="iN0-l3-epB" id="kCW-yf-GMq"/>
             </connections>
         </placeholder>
@@ -13,7 +15,27 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <searchBar contentMode="redraw" placeholder="Search for a cocktail" translatesAutoresizingMaskIntoConstraints="NO" id="JuU-U0-g3u">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" style="plain" separatorStyle="none" allowsMultipleSelection="YES" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="pe7-Fw-IAC">
+                    <rect key="frame" x="0.0" y="44" width="320" height="524"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                </tableView>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="JuU-U0-g3u" secondAttribute="trailing" id="AHT-PJ-NqO"/>
+                <constraint firstItem="JuU-U0-g3u" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="EGr-HM-4jr"/>
+                <constraint firstAttribute="trailing" secondItem="pe7-Fw-IAC" secondAttribute="trailing" id="euS-Yl-FPC"/>
+                <constraint firstItem="pe7-Fw-IAC" firstAttribute="top" secondItem="JuU-U0-g3u" secondAttribute="bottom" id="iKI-6m-msb"/>
+                <constraint firstItem="JuU-U0-g3u" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="tJY-YL-9mB"/>
+                <constraint firstItem="pe7-Fw-IAC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="wfB-X5-M2y"/>
+                <constraint firstAttribute="bottom" secondItem="pe7-Fw-IAC" secondAttribute="bottom" id="y4u-Ah-Zf6"/>
+            </constraints>
         </view>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

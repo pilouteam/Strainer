@@ -142,25 +142,9 @@
     <Reference Include="System.Reactive.PlatformServices">
       <HintPath>..\packages\Amp.Rx.1.5.11\lib\Xamarin.iOS10\System.Reactive.PlatformServices.dll</HintPath>
     </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Contents.json" />
-    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-60%402x.png" />
-    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-60%403x.png" />
-    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-76.png" />
-    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-76%402x.png" />
-    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-Small.png" />
-    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-Small%402x.png" />
-    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-Small%403x.png" />
-    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-Small-40.png" />
-    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-Small-40%402x.png" />
-    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-Small-40%403x.png" />
-    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\Contents.json" />
-    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\Default.png" />
-    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\Default%402x.png" />
-    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\Default-568h%402x.png" />
-    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\Default-Portrait.png" />
-    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\Default-Portrait%402x.png" />
+    <Reference Include="SWTableViewCell">
+      <HintPath>..\Components\swtableviewcell-0.3.6.1\lib\ios-unified\SWTableViewCell.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="Resources\ITunesArtwork" />
@@ -173,6 +157,7 @@
     <InterfaceDefinition Include="Views\TabView.xib" />
     <InterfaceDefinition Include="Views\ShareView.xib" />
     <InterfaceDefinition Include="Views\SettingsView.xib" />
+    <InterfaceDefinition Include="Controls\CocktailListItemView.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -205,6 +190,15 @@
     <Compile Include="Views\SettingsView.designer.cs">
       <DependentUpon>SettingsView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Colors.cs" />
+    <Compile Include="Controls\CocktailListItemView.cs" />
+    <Compile Include="Controls\CocktailListItemView.designer.cs">
+      <DependentUpon>CocktailListItemView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\StrainerConverters.cs" />
+    <Compile Include="Converters\StringToUIImageConverter.cs" />
+    <Compile Include="Controls\SwipeableCocktailCell.cs" />
+    <Compile Include="Framework\CocktailTableViewSource.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -212,8 +206,54 @@
       <Project>{E2AB1C02-8B62-4A66-B608-471A773978BB}</Project>
       <Name>Strainer.Presentation</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Strainer.Common\Strainer.Common.csproj">
+      <Project>{D55D202E-1FEA-4A2F-B734-060E3B6A7401}</Project>
+      <Name>Strainer.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Framework\" />
+    <Folder Include="Controls\" />
+    <Folder Include="Converters\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\settings.png" />
+    <BundleResource Include="Resources\settings%402x.png" />
+    <BundleResource Include="Resources\settings%403x.png" />
+    <BundleResource Include="Resources\home.png" />
+    <BundleResource Include="Resources\home%402x.png" />
+    <BundleResource Include="Resources\home%403x.png" />
+    <BundleResource Include="Resources\share.png" />
+    <BundleResource Include="Resources\share%402x.png" />
+    <BundleResource Include="Resources\share%403x.png" />
+    <BundleResource Include="Resources\add.png" />
+    <BundleResource Include="Resources\add%402x.png" />
+    <BundleResource Include="Resources\add%403x.png" />
+    <BundleResource Include="Resources\arrow_right.png" />
+    <BundleResource Include="Resources\arrow_right%402x.png" />
+    <BundleResource Include="Resources\arrow_right%403x.png" />
+    <BundleResource Include="Resources\old_fashion.png" />
+    <BundleResource Include="Resources\ti_punch.png" />
+    <BundleResource Include="Resources\mojito.png" />
+    <BundleResource Include="Resources\cock.png" />
+    <BundleResource Include="Resources\check%402x.png" />
+    <BundleResource Include="Resources\clock%402x.png" />
+    <BundleResource Include="Resources\cross%402x.png" />
+    <BundleResource Include="Resources\list%402x.png" />
+    <BundleResource Include="Resources\share_big.png" />
+    <BundleResource Include="Resources\share_big%402x.png" />
+    <BundleResource Include="Resources\share_big%403x.png" />
+    <BundleResource Include="Resources\delete_big.png" />
+    <BundleResource Include="Resources\delete_big%402x.png" />
+    <BundleResource Include="Resources\delete_big%403x.png" />
+    <BundleResource Include="Resources\delete.png" />
+    <BundleResource Include="Resources\delete%402x.png" />
+    <BundleResource Include="Resources\delete%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <XamarinComponentReference Include="swtableviewcell">
+      <Version>0.3.6.1</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
   </ItemGroup>
 </Project>

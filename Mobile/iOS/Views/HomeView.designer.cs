@@ -12,9 +12,23 @@ namespace Strainer.iOS.Views
 	[Register ("HomeView")]
 	partial class HomeView
 	{
+		[Outlet]
+		UIKit.UISearchBar searchBar { get; set; }
+
+		[Outlet]
+		UIKit.UITableView tblCocktail { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
+			if (searchBar != null) {
+				searchBar.Dispose ();
+				searchBar = null;
+			}
+
+			if (tblCocktail != null) {
+				tblCocktail.Dispose ();
+				tblCocktail = null;
+			}
 		}
 	}
 }

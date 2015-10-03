@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="92" id="cxk-wN-pdQ" customClass="CocktailListItemView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cxk-wN-pdQ" id="YTl-1W-gDM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5v7-VM-ECr">
+                        <rect key="frame" x="94" y="17.5" width="204" height="44"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Old Fashion" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yuc-aR-ZlX">
+                                <rect key="frame" x="0.0" y="0.0" width="204" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="burbon, bitter" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQl-ge-Nnw">
+                                <rect key="frame" x="0.0" y="24" width="204" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NQl-ge-Nnw" firstAttribute="top" secondItem="yuc-aR-ZlX" secondAttribute="bottom" constant="4" id="6UK-X9-Gek"/>
+                            <constraint firstItem="NQl-ge-Nnw" firstAttribute="leading" secondItem="5v7-VM-ECr" secondAttribute="leading" id="6he-bQ-LjX"/>
+                            <constraint firstAttribute="trailing" secondItem="yuc-aR-ZlX" secondAttribute="trailing" id="CcP-Oh-4LA"/>
+                            <constraint firstAttribute="height" constant="44" id="JxF-Ku-8oY"/>
+                            <constraint firstAttribute="trailing" secondItem="NQl-ge-Nnw" secondAttribute="trailing" id="MXY-V5-Vhx"/>
+                            <constraint firstItem="yuc-aR-ZlX" firstAttribute="top" secondItem="5v7-VM-ECr" secondAttribute="top" id="oEm-oE-p9n"/>
+                            <constraint firstItem="yuc-aR-ZlX" firstAttribute="leading" secondItem="5v7-VM-ECr" secondAttribute="leading" id="uzt-gW-Eko"/>
+                        </constraints>
+                    </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_right.png" translatesAutoresizingMaskIntoConstraints="NO" id="yCt-lv-XCW" userLabel="Right Arrow">
+                        <rect key="frame" x="300" y="32" width="8" height="14"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="14" id="lGn-B6-Q3R"/>
+                            <constraint firstAttribute="width" constant="8" id="su4-4F-4Qs"/>
+                        </constraints>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DMu-al-a2E">
+                        <rect key="frame" x="0.0" y="78.5" width="320" height="1"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="P2r-h9-xsJ"/>
+                        </constraints>
+                    </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5LT-3G-2CL">
+                        <rect key="frame" x="16" y="5" width="70" height="70"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="70" id="HBs-gf-3Oe"/>
+                            <constraint firstAttribute="height" constant="70" id="S8K-KD-chA"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="DMu-al-a2E" secondAttribute="bottom" id="6KV-PN-azr"/>
+                    <constraint firstItem="5LT-3G-2CL" firstAttribute="leading" secondItem="YTl-1W-gDM" secondAttribute="leadingMargin" constant="8" id="GTC-9w-znJ"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="yCt-lv-XCW" secondAttribute="trailing" constant="4" id="GVu-R7-hsR"/>
+                    <constraint firstItem="yCt-lv-XCW" firstAttribute="leading" secondItem="5v7-VM-ECr" secondAttribute="trailing" constant="2" id="ODD-cy-xHD"/>
+                    <constraint firstAttribute="centerY" secondItem="5v7-VM-ECr" secondAttribute="centerY" id="WRy-s1-EV1"/>
+                    <constraint firstItem="DMu-al-a2E" firstAttribute="leading" secondItem="YTl-1W-gDM" secondAttribute="leading" id="Xro-y9-znz"/>
+                    <constraint firstAttribute="centerY" secondItem="5LT-3G-2CL" secondAttribute="centerY" id="cld-4C-33m"/>
+                    <constraint firstItem="5v7-VM-ECr" firstAttribute="leading" secondItem="5LT-3G-2CL" secondAttribute="trailing" constant="8" id="dSz-Ox-Pig"/>
+                    <constraint firstAttribute="centerY" secondItem="yCt-lv-XCW" secondAttribute="centerY" id="kqK-El-q0R"/>
+                    <constraint firstAttribute="trailing" secondItem="DMu-al-a2E" secondAttribute="trailing" id="q8q-qM-hF4"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="imgCocktail" destination="5LT-3G-2CL" id="5Ay-fH-Je1"/>
+                <outlet property="lblCocktailAlcool" destination="NQl-ge-Nnw" id="okH-le-bcY"/>
+                <outlet property="lblCocktailTitle" destination="yuc-aR-ZlX" id="FVW-W4-ffh"/>
+            </connections>
+            <point key="canvasLocation" x="278" y="202"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="arrow_right.png" width="8" height="14"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

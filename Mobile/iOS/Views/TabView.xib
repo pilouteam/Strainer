@@ -19,9 +19,9 @@
                     <rect key="frame" x="0.0" y="519" width="320" height="49"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <items>
-                        <tabBarItem title="Home" id="4fi-Pt-4aO"/>
-                        <tabBarItem tag="1" title="Share" id="4cX-lV-Etm"/>
-                        <tabBarItem tag="2" title="Settings" id="CT8-N6-P5a"/>
+                        <tabBarItem title="Home" image="home.png" id="4fi-Pt-4aO"/>
+                        <tabBarItem tag="1" title="Share" image="share.png" id="4cX-lV-Etm"/>
+                        <tabBarItem tag="2" title="Settings" image="settings.png" id="CT8-N6-P5a"/>
                     </items>
                 </tabBar>
             </subviews>
@@ -33,6 +33,11 @@
             </constraints>
         </view>
     </objects>
+    <resources>
+        <image name="home.png" width="24" height="24"/>
+        <image name="settings.png" width="24" height="24"/>
+        <image name="share.png" width="24" height="24"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
