@@ -95,13 +95,14 @@ namespace Strainer.iOS.Views
             ParentViewController.NavigationController.NavigationBar.TintColor = UIColor.White;
 
             _addBarButtonItem = new UIBarButtonItem(UIImage.FromBundle("add"), UIBarButtonItemStyle.Plain, null);
-            var deleteBarButtonItem = new UIBarButtonItem (UIImage.FromBundle ("delete"), UIBarButtonItemStyle.Plain, null);
-            var shareBarButtonItem = new UIBarButtonItem (UIImage.FromBundle ("share"), UIBarButtonItemStyle.Plain, null);
-            _editBarButtonItem = new UIBarButtonItem(){ Title = "Edit" };
 
+            var deleteBarButtonItem = new UIBarButtonItem (UIImage.FromBundle ("delete"), UIBarButtonItemStyle.Plain, null);
             deleteBarButtonItem.Clicked += (sender, e) => ReturnResult(delete:false);
+
+            var shareBarButtonItem = new UIBarButtonItem (UIImage.FromBundle ("share"), UIBarButtonItemStyle.Plain, null);
             shareBarButtonItem.Clicked += (sender, e) => ReturnResult(delete:false);
-            
+
+            _editBarButtonItem = new UIBarButtonItem(){ Title = "Edit" };
             _editBarButtonItem.Clicked += (sender, e) => 
                 {
                     if(!string.IsNullOrEmpty(_editBarButtonItem.Title))
@@ -119,9 +120,9 @@ namespace Strainer.iOS.Views
                         }
                     }
                 };
+            
             ParentViewController.NavigationItem.SetRightBarButtonItem(_addBarButtonItem, false);
             ParentViewController.NavigationItem.SetLeftBarButtonItem(_editBarButtonItem, false);
-
         }
 
         private void ReturnResult(bool delete)
@@ -138,7 +139,6 @@ namespace Strainer.iOS.Views
                     homeViewModel.DeleteCocktails.Execute(indexes);
                 else
                     homeViewModel.ShareCocktails.Execute(indexes);
-
             }
         }
 
